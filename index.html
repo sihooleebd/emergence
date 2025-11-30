@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Double Pendulum Stability</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <canvas id="simulationCanvas"></canvas>
+
+    <div class="ui-overlay">
+        <h1>Double Pendulum Stability</h1>
+        <div class="controls">
+            <!-- Live Preview Toggle -->
+            <div class="control-group">
+                <label class="toggle-label">
+                    <input type="checkbox" id="livePreviewToggle">
+                    <span>Live Preview (Low Res)</span>
+                </label>
+            </div>
+
+            <!-- Physics Parameters -->
+            <details class="param-section" open>
+                <summary>Physics Parameters</summary>
+                <div class="param-group">
+                    <div class="control-group">
+                        <label>Gravity (g): <span id="gValue">9.81</span> m/s²</label>
+                        <input type="range" id="gSlider" min="1" max="20" step="0.1" value="9.81">
+                    </div>
+                    <div class="control-group">
+                        <label>Mass 1 (m₁): <span id="m1Value">1.0</span> kg</label>
+                        <input type="range" id="m1Slider" min="0.1" max="5" step="0.1" value="1.0">
+                    </div>
+                    <div class="control-group">
+                        <label>Mass 2 (m₂): <span id="m2Value">1.0</span> kg</label>
+                        <input type="range" id="m2Slider" min="0.1" max="5" step="0.1" value="1.0">
+                    </div>
+                    <div class="control-group">
+                        <label>Length 1 (l₁): <span id="l1Value">1.0</span> m</label>
+                        <input type="range" id="l1Slider" min="0.1" max="3" step="0.1" value="1.0">
+                    </div>
+                    <div class="control-group">
+                        <label>Length 2 (l₂): <span id="l2Value">1.0</span> m</label>
+                        <input type="range" id="l2Slider" min="0.1" max="3" step="0.1" value="1.0">
+                    </div>
+                </div>
+            </details>
+
+            <!-- Simulation Parameters -->
+            <details class="param-section">
+                <summary>Simulation Parameters</summary>
+                <div class="param-group">
+                    <div class="control-group">
+                        <label>Time Step (dt): <span id="dtValue">0.01</span> s</label>
+                        <input type="range" id="dtSlider" min="0.001" max="0.05" step="0.001" value="0.01">
+                    </div>
+                    <div class="control-group">
+                        <label>Max Time: <span id="maxTimeValue">15.0</span> s</label>
+                        <input type="range" id="maxTimeSlider" min="5" max="30" step="0.5" value="15.0">
+                    </div>
+                </div>
+            </details>
+
+            <!-- Render Controls -->
+            <div class="control-group render-controls">
+                <button id="render16KBtn" class="render-btn">🎨 Render 16K Image</button>
+                <button id="downloadBtn" class="secondary-btn" style="display:none;">💾 Download Image</button>
+            </div>
+
+            <div class="status">
+                <span id="statusText">Ready - Enable Live Preview or click Render</span>
+                <div class="progress-bar">
+                    <div id="progressFill"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
