@@ -2,6 +2,7 @@
 
 An interactive visualization of double pendulum chaos theory, revealing the stunning fractal patterns that emerge from the system's sensitive dependence on initial conditions.
 
+![preview][https://github.com/sihooleebd/emergence/blob/master/download%20(3).png]
 
 
 ## Overview
