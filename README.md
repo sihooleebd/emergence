@@ -26,7 +26,7 @@ The simulation models a double pendulum system with two point masses connected b
 
 **Configuration:**
 - Gravitational acceleration: g = 9.81 m/s²
-- Equal masses: m₁ = m₂ = 1.0 k$$g
+- Equal masses: m₁ = m₂ = 1.0 kg
 - Equal rod lengths: l₁ = l₂ = 1.0 m
 - Time step: dt = 0.01 s
 - Maximum simulation time: 15.0 s
